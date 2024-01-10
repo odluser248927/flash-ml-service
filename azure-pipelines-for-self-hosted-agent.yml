@@ -5,22 +5,16 @@
 
 trigger:
 - main
--build
--build_and_deploy
 
 pool: myAgent
 
 variables:
-  # TODO: Replace the service connection name as used in the DevOps project settings
   azureServiceConnectionId: 'myServiceConnection'
-  
-  # TODO: Specify the value of the existing Web App name
   webAppName: 'mywebapp248927'
 
   # Environment name
   environmentName: 'flask-ml-service'
 
-  # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
 stages:
@@ -28,7 +22,7 @@ stages:
   displayName: Build stage
   jobs:
   - job: BuildJob
-    pool: myAgentPool
+    pool: myAgent
     steps:    
     - script: |
         python3.7 -m pip install --upgrade pip
