@@ -2,18 +2,20 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+
 trigger:
 - main
+-build
+-build_and_deploy
 
-# TODO: Replace the agent pool name
-pool: myAgentPool
+pool: myAgent
 
 variables:
   # TODO: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'mySC'
+  azureServiceConnectionId: 'myServiceConnection'
   
   # TODO: Specify the value of the existing Web App name
-  webAppName: 'mywebapp207578'
+  webAppName: 'mywebapp248927'
 
   # Environment name
   environmentName: 'flask-ml-service'
